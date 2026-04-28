@@ -1,4 +1,4 @@
-package br.com.erudio.dataDTO;
+package br.com.erudio.dataDTO.v1;
 
 import java.io.Serializable;
 import java.util.Objects;

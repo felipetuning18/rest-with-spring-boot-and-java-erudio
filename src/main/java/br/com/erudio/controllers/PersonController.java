@@ -1,6 +1,7 @@
 package br.com.erudio.controllers;
 
-import br.com.erudio.dataDTO.PersonDTO;
+import br.com.erudio.dataDTO.v1.PersonDTO;
+import br.com.erudio.dataDTO.v2.PersonDTOV2;
 import br.com.erudio.services.PersonServices;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,14 @@ public class PersonController {
     )
     public PersonDTO create(@RequestBody PersonDTO person) {
         return service.create(person);
+    }
+
+    @PostMapping(value = "/v2",
+        consumes = MediaType.APPLICATION_JSON_VALUE,
+        produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public PersonDTOV2 create(@RequestBody PersonDTOV2 person) {
+        return service.createV2(person);
     }
 
     @PutMapping(
